@@ -1,0 +1,28 @@
+E:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll.config
+E:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll
+E:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.pdb
+E:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.dll
+E:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.pdb
+E:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csprojResolveAssemblyReference.cache
+D:\WORKSPACE\EzeeCharga\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll.config
+D:\WORKSPACE\EzeeCharga\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll
+D:\WORKSPACE\EzeeCharga\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.pdb
+D:\WORKSPACE\EzeeCharga\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csprojResolveAssemblyReference.cache
+D:\WORKSPACE\EzeeCharga\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.dll
+D:\WORKSPACE\EzeeCharga\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.pdb
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll.config
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.pdb
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.dll
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.pdb
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\bin\Newtonsoft.Json.Net20.dll
+F:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll.config
+F:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.dll
+F:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\bin\EzzeChargeServices.pdb
+F:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\bin\Newtonsoft.Json.Net20.dll
+F:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csprojResolveAssemblyReference.cache
+F:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.dll
+F:\Joshep_3Tier Services\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.pdb
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csprojAssemblyReference.cache
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csproj.CoreCompileInputs.cache
+D:\WORKSPACE\EzeeCharge\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csproj.CopyComplete

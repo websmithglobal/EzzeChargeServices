@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="EzzeChargeServices.asmx.cs" Class="EzzeChargeServices.EzzeChargeServices" %>
