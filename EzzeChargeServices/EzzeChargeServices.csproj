@@ -85,6 +85,8 @@
     <Compile Include="Bussiness\GetDistributorUsers.cs" />
     <Compile Include="Bussiness\GetDTHBooking.cs" />
     <Compile Include="Bussiness\GetDthBookingReport.cs" />
+    <Compile Include="Bussiness\GetDTHBoxTypeMaster.cs" />
+    <Compile Include="Bussiness\GetDTHCategoryMaster.cs" />
     <Compile Include="Bussiness\GetDTHCharges.cs" />
     <Compile Include="Bussiness\GetEarnCommi.cs" />
     <Compile Include="Bussiness\GetEditProfile.cs" />
@@ -109,11 +111,13 @@
     <Compile Include="Bussiness\SendSMS.cs" />
     <Compile Include="Bussiness\UserLogin.cs" />
     <Compile Include="DataClass\DataAcBal.cs" />
+    <Compile Include="DataClass\DataCategoryMaster.cs" />
     <Compile Include="DataClass\DataChangePassword.cs" />
     <Compile Include="DataClass\DataDistributor.cs" />
     <Compile Include="DataClass\DataDoRecharge.cs" />
     <Compile Include="DataClass\DataDTHBooking.cs" />
     <Compile Include="DataClass\DataDthBookingReport.cs" />
+    <Compile Include="DataClass\DataDTHBoxType.cs" />
     <Compile Include="DataClass\DataDTHCharges.cs" />
     <Compile Include="DataClass\DataEarnCommi.cs" />
     <Compile Include="DataClass\DataEditProfile.cs" />
