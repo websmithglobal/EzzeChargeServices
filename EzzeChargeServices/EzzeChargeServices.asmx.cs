@@ -1226,6 +1226,69 @@ namespace EzzeChargeServices
             return Serialize(new AuthResponse(0, "Authentication information not provided."));
         }
         #endregion
+
+        #region Get D2H Activation
+        [WebMethod(Description = "Get DTH Box Type Master")]
+        [SoapDocumentMethod(Binding = "EzzeCharge")]
+        [SoapHeader("SecureAuthentication", Direction = SoapHeaderDirection.In)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string GetDTHBoxType()
+        {
+            if (SecureAuthentication != null)
+            {
+                try
+                {
+                    int Output = CheckLoginReturnUserId(SecureAuthentication).ValueFromSQL;
+                    if (Output > 0)
+                    {
+                        GetDTHBoxTypeMaster proc = new GetDTHBoxTypeMaster();
+                        return Serialize(proc.GetDTHBoxType());
+                    }
+                    else
+                        return Serialize(new AuthResponse(0, Output == -1 ? "Authentication is NULL" : "Invalid Authentication"));
+                }
+                catch (Exception ex)
+                {
+                    SystemLog("GetCharges", ex.Message);
+                    ErrorReport.LogError(ex, "GetCharges");
+                    return Serialize(new AuthResponse(0, "internal server error"));
+                }
+
+            }
+            return Serialize(new AuthResponse(0, "Authentication information not provided."));
+        }
+
+        [WebMethod(Description = "Get All DTH Chanel Category List")]
+        [SoapDocumentMethod(Binding = "EzzeCharge")]
+        [SoapHeader("SecureAuthentication", Direction = SoapHeaderDirection.In)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string GetDTHCategory()
+        {
+            if (SecureAuthentication != null)
+            {
+                try
+                {
+                    int Output = CheckLoginReturnUserId(SecureAuthentication).ValueFromSQL;
+                    if (Output > 0)
+                    {
+                        GetDTHCategoryMaster proc = new GetDTHCategoryMaster();
+                        return Serialize(proc.GetDTHCategory());
+                    }
+                    else
+                        return Serialize(new AuthResponse(0, Output == -1 ? "Authentication is NULL" : "Invalid Authentication"));
+                }
+                catch (Exception ex)
+                {
+                    SystemLog("GetCharges", ex.Message);
+                    ErrorReport.LogError(ex, "GetCharges");
+                    return Serialize(new AuthResponse(0, "internal server error"));
+                }
+
+            }
+            return Serialize(new AuthResponse(0, "Authentication information not provided."));
+        }
+        #endregion
+
     }
 }
 
