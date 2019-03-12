@@ -80,6 +80,7 @@
     <Compile Include="Bussiness\AuthResponse.cs" />
     <Compile Include="Bussiness\GetBalance.cs" />
     <Compile Include="Bussiness\GetChangePassword.cs" />
+    <Compile Include="Bussiness\GetChannelPack.cs" />
     <Compile Include="Bussiness\GetChildUsers.cs" />
     <Compile Include="Bussiness\GetDistributor.cs" />
     <Compile Include="Bussiness\GetDistributorUsers.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Bussiness\GetLedgerReport.cs" />
     <Compile Include="Bussiness\GetNotification.cs" />
     <Compile Include="Bussiness\GetOperators.cs" />
+    <Compile Include="Bussiness\GetPackageMaster.cs" />
     <Compile Include="Bussiness\GetProfile.cs" />
     <Compile Include="Bussiness\GetRecharge.cs" />
     <Compile Include="Bussiness\GetRechargeReport.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="DataClass\DataAcBal.cs" />
     <Compile Include="DataClass\DataCategoryMaster.cs" />
     <Compile Include="DataClass\DataChangePassword.cs" />
+    <Compile Include="DataClass\DataChannelPack.cs" />
     <Compile Include="DataClass\DataDistributor.cs" />
     <Compile Include="DataClass\DataDoRecharge.cs" />
     <Compile Include="DataClass\DataDTHBooking.cs" />
@@ -133,6 +136,7 @@
     <Compile Include="DataClass\DataNotification.cs" />
     <Compile Include="DataClass\DataOFFER.cs" />
     <Compile Include="DataClass\DataOperators.cs" />
+    <Compile Include="DataClass\DataPackageMaster.cs" />
     <Compile Include="DataClass\DataProfile.cs" />
     <Compile Include="DataClass\DataRechargeReport.cs" />
     <Compile Include="DataClass\DataRechargeTickets.cs" />
