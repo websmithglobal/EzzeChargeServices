@@ -1228,6 +1228,7 @@ namespace EzzeChargeServices
         #endregion
 
         #region Get D2H Activation
+
         [WebMethod(Description = "Get DTH Box Type Master")]
         [SoapDocumentMethod(Binding = "EzzeCharge")]
         [SoapHeader("SecureAuthentication", Direction = SoapHeaderDirection.In)]
@@ -1249,8 +1250,8 @@ namespace EzzeChargeServices
                 }
                 catch (Exception ex)
                 {
-                    SystemLog("GetCharges", ex.Message);
-                    ErrorReport.LogError(ex, "GetCharges");
+                    SystemLog("GetDTHBoxType", ex.Message);
+                    ErrorReport.LogError(ex, "GetDTHBoxType");
                     return Serialize(new AuthResponse(0, "internal server error"));
                 }
 
@@ -1279,14 +1280,73 @@ namespace EzzeChargeServices
                 }
                 catch (Exception ex)
                 {
-                    SystemLog("GetCharges", ex.Message);
-                    ErrorReport.LogError(ex, "GetCharges");
+                    SystemLog("GetDTHCategory", ex.Message);
+                    ErrorReport.LogError(ex, "GetDTHCategory");
                     return Serialize(new AuthResponse(0, "internal server error"));
                 }
 
             }
             return Serialize(new AuthResponse(0, "Authentication information not provided."));
         }
+
+        [WebMethod(Description = "Get DTH Package By Operator")]
+        [SoapDocumentMethod(Binding = "EzzeCharge")]
+        [SoapHeader("SecureAuthentication", Direction = SoapHeaderDirection.In)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string GetDTHPackageByOperator(int OperatorCode)
+        {
+            if (SecureAuthentication != null)
+            {
+                try
+                {
+                    int Output = CheckLoginReturnUserId(SecureAuthentication).ValueFromSQL;
+                    if (Output > 0)
+                    {
+                        GetPackageMaster proc = new GetPackageMaster();
+                        return Serialize(proc.GetPackageListByOperator(OperatorCode));
+                    }
+                    else
+                        return Serialize(new AuthResponse(0, Output == -1 ? "Authentication is NULL" : "Invalid Authentication"));
+                }
+                catch (Exception ex)
+                {
+                    SystemLog("GetPackageListByOperator", ex.Message);
+                    ErrorReport.LogError(ex, "GetPackageListByOperator");
+                    return Serialize(new AuthResponse(0, "internal server error"));
+                }
+            }
+            return Serialize(new AuthResponse(0, "Authentication information not provided."));
+        }
+
+        [WebMethod(Description = "Get DTH Channel List By Pack")]
+        [SoapDocumentMethod(Binding = "EzzeCharge")]
+        [SoapHeader("SecureAuthentication", Direction = SoapHeaderDirection.In)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string GetDTHChannelListByPack(int packid)
+        {
+            if (SecureAuthentication != null)
+            {
+                try
+                {
+                    int Output = CheckLoginReturnUserId(SecureAuthentication).ValueFromSQL;
+                    if (Output > 0)
+                    {
+                        GetChannelPack proc = new GetChannelPack();
+                        return Serialize(proc.GetChannelListByPack(packid));
+                    }
+                    else
+                        return Serialize(new AuthResponse(0, Output == -1 ? "Authentication is NULL" : "Invalid Authentication"));
+                }
+                catch (Exception ex)
+                {
+                    SystemLog("GetChannelListByPack", ex.Message);
+                    ErrorReport.LogError(ex, "GetChannelListByPack");
+                    return Serialize(new AuthResponse(0, "internal server error"));
+                }
+            }
+            return Serialize(new AuthResponse(0, "Authentication information not provided."));
+        }
+      
         #endregion
 
     }
