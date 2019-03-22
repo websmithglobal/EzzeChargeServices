@@ -27,4 +27,19 @@ namespace EzzeChargeServices.DataClass
             }
         }
     }
+
+    public class ChannelPackageList
+    {
+        public Int64 categoryid { get; set; }
+        public string categoryname { get; set; }
+        public List<ChannelList> lstChannel { get; set; }
+    }
+
+    public class ChannelList
+    {
+        public Int64 packchanel_sort { get; set; }
+        public string chanelname { get; set; }
+        public decimal price { get; set; }
+        public Int64 chanelno { get; set; }
+    }
 }
