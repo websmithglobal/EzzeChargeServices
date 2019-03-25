@@ -11,18 +11,18 @@ namespace EzzeChargeServices.Bussiness
     {
         public List<ChannelPackageList> GetChannelListByPack(int packid)
         {
-            List<ChannelPackageList> lstCategory = new List<ChannelPackageList>();
+            List<ChannelPackageList> lstChannels = new List<ChannelPackageList>();
             try
             {
-                DataTable dt = SqlHelper.GetDataUsingQuery("SELECT PackageMasterDetail.packchanel_sort, ChanelMaster.chanelname, ChanelMaster.price, ChanelMaster.chanelno, ChanelMaster.categoryid, CategoryMaster.categoryname FROM PackageMasterDetail INNER JOIN ChanelMaster ON PackageMasterDetail.packchanel_chanelid = ChanelMaster.chanelid INNER JOIN CategoryMaster ON ChanelMaster.categoryid = CategoryMaster.categoryid WHERE packchanel_packid = " + packid + " ORDER BY PackageMasterDetail.packchanel_sort");
+                DataTable dt = SqlHelper.GetDataUsingQuery("SELECT PackageMasterDetail.packchanel_sort, ChanelMaster.chanelname, ChanelMaster.price, ChanelMaster.chanelno, ChanelMaster.categoryid, CategoryMaster.categoryname, BoxTypeMaster.boxtype FROM PackageMasterDetail INNER JOIN ChanelMaster ON PackageMasterDetail.packchanel_chanelid = ChanelMaster.chanelid INNER JOIN CategoryMaster ON ChanelMaster.categoryid = CategoryMaster.categoryid INNER JOIN BoxTypeMaster ON ChanelMaster.boxtypeid = BoxTypeMaster.boxtypeid WHERE packchanel_packid = " + packid + " ORDER BY PackageMasterDetail.packchanel_sort");
 
-                var val1 = (from dr in dt.AsEnumerable()
+                var lstCategory = (from dr in dt.AsEnumerable()
                             select new {
                                 categoryid = dr.Field<Int64>("categoryid"),
                                 categoryname = dr.Field<string>("categoryname")
                             }).Distinct();
 
-                lstCategory = (from dr1 in val1
+                lstChannels = (from dr1 in lstCategory
                                select new ChannelPackageList()
                                {
                                    categoryid = dr1.categoryid,
@@ -34,7 +34,8 @@ namespace EzzeChargeServices.Bussiness
                                                      packchanel_sort = dr.Field<Int64>("packchanel_sort"),
                                                      chanelname = dr.Field<string>("chanelname"),
                                                      price = dr.Field<decimal>("price"),
-                                                     chanelno = dr.Field<Int64>("chanelno")
+                                                     chanelno = dr.Field<Int64>("chanelno"),
+                                                     boxtype = dr.Field<string>("boxtype")
                                                  }).ToList()
                                }).ToList();
             }
@@ -42,7 +43,7 @@ namespace EzzeChargeServices.Bussiness
             {
                 throw ex;
             }
-            return lstCategory;
+            return lstChannels;
         }
     }
 }

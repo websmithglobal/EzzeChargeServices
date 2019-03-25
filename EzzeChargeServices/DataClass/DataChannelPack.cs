@@ -41,5 +41,6 @@ namespace EzzeChargeServices.DataClass
         public string chanelname { get; set; }
         public decimal price { get; set; }
         public Int64 chanelno { get; set; }
+        public string boxtype { get; set; }
     }
 }
