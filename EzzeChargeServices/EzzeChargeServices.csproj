@@ -82,6 +82,7 @@
     <Compile Include="Bussiness\GetChangePassword.cs" />
     <Compile Include="Bussiness\GetChannelPack.cs" />
     <Compile Include="Bussiness\GetChildUsers.cs" />
+    <Compile Include="Bussiness\GetDHTChannelLink.cs" />
     <Compile Include="Bussiness\GetDistributor.cs" />
     <Compile Include="Bussiness\GetDistributorUsers.cs" />
     <Compile Include="Bussiness\GetDTHBooking.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="DataClass\DataRechargeReport.cs" />
     <Compile Include="DataClass\DataRechargeTickets.cs" />
     <Compile Include="DataClass\DataRetailer.cs" />
+    <Compile Include="DataClass\DTHChannelLink.cs" />
     <Compile Include="DataClass\GetChildUsers.cs" />
     <Compile Include="DataClass\UserAuthntication.cs" />
     <Compile Include="EzzeChargeServices.asmx.cs">

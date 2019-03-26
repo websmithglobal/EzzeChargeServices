@@ -1228,6 +1228,7 @@ namespace EzzeChargeServices
         #endregion
 
         #region Get D2H Activation
+        // Below all the API is created by kalpesh gajera
 
         [WebMethod(Description = "Get DTH Box Type Master")]
         [SoapDocumentMethod(Binding = "EzzeCharge")]
@@ -1310,8 +1311,8 @@ namespace EzzeChargeServices
                 }
                 catch (Exception ex)
                 {
-                    SystemLog("GetPackageListByOperator", ex.Message);
-                    ErrorReport.LogError(ex, "GetPackageListByOperator");
+                    SystemLog("GetDTHPackageByOperator", ex.Message);
+                    ErrorReport.LogError(ex, "GetDTHPackageByOperator");
                     return Serialize(new AuthResponse(0, "internal server error"));
                 }
             }
@@ -1339,14 +1340,45 @@ namespace EzzeChargeServices
                 }
                 catch (Exception ex)
                 {
-                    SystemLog("GetChannelListByPack", ex.Message);
-                    ErrorReport.LogError(ex, "GetChannelListByPack");
+                    SystemLog("GetDTHChannelListByPack", ex.Message);
+                    ErrorReport.LogError(ex, "GetDTHChannelListByPack");
                     return Serialize(new AuthResponse(0, "internal server error"));
                 }
             }
             return Serialize(new AuthResponse(0, "Authentication information not provided."));
         }
-      
+
+        [WebMethod(Description = "Get All DTH Chanel Link List")]
+        [SoapDocumentMethod(Binding = "EzzeCharge")]
+        [SoapHeader("SecureAuthentication", Direction = SoapHeaderDirection.In)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string GetDTHChannelLink()
+        {
+            if (SecureAuthentication != null)
+            {
+                try
+                {
+                    int Output = CheckLoginReturnUserId(SecureAuthentication).ValueFromSQL;
+                    if (Output > 0)
+                    {
+                        GetDHTChannelLink proc = new GetDHTChannelLink();
+                        return Serialize(proc.GetDTHChannelLink());
+                    }
+                    else
+                    {
+                        return Serialize(new AuthResponse(0, Output == -1 ? "Authentication is NULL" : "Invalid Authentication"));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    SystemLog("GetDTHChannelLink", ex.Message);
+                    ErrorReport.LogError(ex, "GetDTHChannelLink");
+                    return Serialize(new AuthResponse(0, "Internal Server Error"));
+                }
+            }
+            return Serialize(new AuthResponse(0, "Authentication information not provided."));
+        }
+
         #endregion
 
     }
