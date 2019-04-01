@@ -34,3 +34,4 @@ G:\WORK SPACE\WEB AND API\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeCh
 G:\WORK SPACE\WEB AND API\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csproj.CopyComplete
 G:\WORK SPACE\WEB AND API\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.dll
 G:\WORK SPACE\WEB AND API\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.pdb
+G:\WORK SPACE\WEB AND API\EzzeChargeServices\EzzeChargeServices\obj\Debug\EzzeChargeServices.csprojAssemblyReference.cache

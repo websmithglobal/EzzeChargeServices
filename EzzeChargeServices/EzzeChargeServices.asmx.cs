@@ -1379,6 +1379,45 @@ namespace EzzeChargeServices
             return Serialize(new AuthResponse(0, "Authentication information not provided."));
         }
 
+        [WebMethod(Description = "Get DTH Channel List By Searched Channel Name")]
+        [SoapDocumentMethod(Binding = "EzzeCharge")]
+        [SoapHeader("SecureAuthentication", Direction = SoapHeaderDirection.In)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string GetDTHChannelListBySearch(ChannelApiParam obj)
+        {
+            if (SecureAuthentication != null)
+            {
+                try
+                {
+                    int Output = CheckLoginReturnUserId(SecureAuthentication).ValueFromSQL;
+                    if (Output > 0)
+                    {
+                        if (!string.IsNullOrWhiteSpace(obj.channelname))
+                        {
+                            GetChannelPack proc = new GetChannelPack();
+                            return Serialize(proc.GetChannelListBySearch(obj));
+                        }
+                        else
+                        {
+                            return Serialize(new AuthResponse(0, "Please Enter Channel Name."));
+                        }
+                    }
+                    else
+                    {
+                        return Serialize(new AuthResponse(0, Output == -1 ? "Authentication is NULL" : "Invalid Authentication"));
+                    }
+                       
+                }
+                catch (Exception ex)
+                {
+                    SystemLog("GetDTHChannelListBySearch", ex.Message);
+                    ErrorReport.LogError(ex, "GetDTHChannelListBySearch");
+                    return Serialize(new AuthResponse(0, "Internal server error"));
+                }
+            }
+            return Serialize(new AuthResponse(0, "Authentication information not provided."));
+        }
+
         #endregion
 
     }

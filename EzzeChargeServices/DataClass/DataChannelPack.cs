@@ -43,4 +43,24 @@ namespace EzzeChargeServices.DataClass
         public Int64 chanelno { get; set; }
         public string boxtype { get; set; }
     }
+
+    public class ChannelViewerList
+    {
+        public Int64 chanelid { get; set; }
+        public Int64 operatorid { get; set; }
+        public Int64 boxtypeid { get; set; }
+        public string boxtype { get; set; }
+        public string chanelname { get; set; }
+        public decimal price { get; set; }
+        public Int64 chanelno { get; set; }
+        public Int64 categoryid { get; set; }
+        public string categoryname { get; set; }
+        public string detail { get; set; }
+        public bool chanelstatus { get; set; }
+    }
+
+    public class ChannelApiParam
+    {
+        public string channelname { get; set; }
+    }
 }
